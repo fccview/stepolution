@@ -1,0 +1,11 @@
+build/
+.lock-waf*
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+*.log
+preview.png
+pebble-tool-emu-app-config-*.html
+tools/

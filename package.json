@@ -1,0 +1,590 @@
+{
+  "name": "stepolution",
+  "author": "MakeAwesomeHappen",
+  "version": "1.0.0",
+  "keywords": [
+    "pebble-app"
+  ],
+  "private": true,
+  "dependencies": {
+    "@rebble/clay": "^1.1.0"
+  },
+  "pebble": {
+    "displayName": "Stepolution",
+    "uuid": "96255f9b-9e44-47ed-bbed-53b9f1718814",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "messageKeys": [
+      "Trainer",
+      "Starter",
+      "Scene",
+      "Frame",
+      "Zoom",
+      "WanderSeconds",
+      "StepGoal",
+      "Demo",
+      "Daylight",
+      "IdleAnimation",
+      "ActiveOnly"
+    ],
+    "resources": {
+      "media": [
+        {
+          "type": "bitmap",
+          "name": "SCENE_PALLET",
+          "file": "scenes/pallet.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_PALLET_GRID",
+          "file": "scenes/pallet.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_BEDROOM",
+          "file": "scenes/bedroom.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_BEDROOM_GRID",
+          "file": "scenes/bedroom.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_LAKE",
+          "file": "scenes/lake.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_LAKE_GRID",
+          "file": "scenes/lake.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_FOREST",
+          "file": "scenes/forest.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_FOREST_GRID",
+          "file": "scenes/forest.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_LAVENDER",
+          "file": "scenes/lavender.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_LAVENDER_GRID",
+          "file": "scenes/lavender.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_TOWER",
+          "file": "scenes/tower.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_TOWER_GRID",
+          "file": "scenes/tower.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_CAVE",
+          "file": "scenes/cave.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_CAVE_GRID",
+          "file": "scenes/cave.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_DOCK",
+          "file": "scenes/dock.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_DOCK_GRID",
+          "file": "scenes/dock.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_SAFARI",
+          "file": "scenes/safari.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_SAFARI_GRID",
+          "file": "scenes/safari.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "SCENE_GLITCH",
+          "file": "scenes/glitch.png"
+        },
+        {
+          "type": "raw",
+          "name": "SCENE_GLITCH_GRID",
+          "file": "scenes/glitch.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "TRAINER_RED",
+          "file": "sprites/trainer_red.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TRAINER_LEAF",
+          "file": "sprites/trainer_leaf.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BULBASAUR",
+          "file": "sprites/bulbasaur.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IVYSAUR",
+          "file": "sprites/ivysaur.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "VENUSAUR",
+          "file": "sprites/venusaur.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CHARMANDER",
+          "file": "sprites/charmander.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CHARMELEON",
+          "file": "sprites/charmeleon.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CHARIZARD",
+          "file": "sprites/charizard.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "SQUIRTLE",
+          "file": "sprites/squirtle.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "WARTORTLE",
+          "file": "sprites/wartortle.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BLASTOISE",
+          "file": "sprites/blastoise.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CATERPIE",
+          "file": "sprites/caterpie.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "METAPOD",
+          "file": "sprites/metapod.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BUTTERFREE",
+          "file": "sprites/butterfree.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "WEEDLE",
+          "file": "sprites/weedle.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "KAKUNA",
+          "file": "sprites/kakuna.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BEEDRILL",
+          "file": "sprites/beedrill.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "PIDGEY",
+          "file": "sprites/pidgey.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "PIDGEOTTO",
+          "file": "sprites/pidgeotto.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "PIDGEOT",
+          "file": "sprites/pidgeot.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "NIDORAN_F",
+          "file": "sprites/nidoran_f.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "NIDORINA",
+          "file": "sprites/nidorina.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "NIDOQUEEN",
+          "file": "sprites/nidoqueen.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "NIDORAN_M",
+          "file": "sprites/nidoran_m.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "NIDORINO",
+          "file": "sprites/nidorino.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "NIDOKING",
+          "file": "sprites/nidoking.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ODDISH",
+          "file": "sprites/oddish.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "GLOOM",
+          "file": "sprites/gloom.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "VILEPLUME",
+          "file": "sprites/vileplume.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "POLIWAG",
+          "file": "sprites/poliwag.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "POLIWHIRL",
+          "file": "sprites/poliwhirl.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "POLIWRATH",
+          "file": "sprites/poliwrath.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ABRA",
+          "file": "sprites/abra.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "KADABRA",
+          "file": "sprites/kadabra.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ALAKAZAM",
+          "file": "sprites/alakazam.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "MACHOP",
+          "file": "sprites/machop.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "MACHOKE",
+          "file": "sprites/machoke.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "MACHAMP",
+          "file": "sprites/machamp.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BELLSPROUT",
+          "file": "sprites/bellsprout.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "WEEPINBELL",
+          "file": "sprites/weepinbell.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "VICTREEBEL",
+          "file": "sprites/victreebel.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "GEODUDE",
+          "file": "sprites/geodude.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "GRAVELER",
+          "file": "sprites/graveler.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "GOLEM",
+          "file": "sprites/golem.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "GASTLY",
+          "file": "sprites/gastly.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "HAUNTER",
+          "file": "sprites/haunter.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "GENGAR",
+          "file": "sprites/gengar.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "DRATINI",
+          "file": "sprites/dratini.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "DRAGONAIR",
+          "file": "sprites/dragonair.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "DRAGONITE",
+          "file": "sprites/dragonite.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "PICHU",
+          "file": "sprites/pichu.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "PIKACHU",
+          "file": "sprites/pikachu.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "RAICHU",
+          "file": "sprites/raichu.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "MEWTWO",
+          "file": "sprites/mewtwo.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "MEW",
+          "file": "sprites/mew.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "MISSINGNO",
+          "file": "sprites/missingno.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_0",
+          "file": "ui/frame_0.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_1",
+          "file": "ui/frame_1.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_2",
+          "file": "ui/frame_2.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_3",
+          "file": "ui/frame_3.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_4",
+          "file": "ui/frame_4.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_5",
+          "file": "ui/frame_5.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_6",
+          "file": "ui/frame_6.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_7",
+          "file": "ui/frame_7.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_8",
+          "file": "ui/frame_8.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_9",
+          "file": "ui/frame_9.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_10",
+          "file": "ui/frame_10.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_11",
+          "file": "ui/frame_11.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_12",
+          "file": "ui/frame_12.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_13",
+          "file": "ui/frame_13.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_14",
+          "file": "ui/frame_14.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_15",
+          "file": "ui/frame_15.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_16",
+          "file": "ui/frame_16.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_17",
+          "file": "ui/frame_17.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_18",
+          "file": "ui/frame_18.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_19",
+          "file": "ui/frame_19.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_20",
+          "file": "ui/frame_20.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_21",
+          "file": "ui/frame_21.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_22",
+          "file": "ui/frame_22.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_23",
+          "file": "ui/frame_23.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_24",
+          "file": "ui/frame_24.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_25",
+          "file": "ui/frame_25.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_26",
+          "file": "ui/frame_26.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FRAME_27",
+          "file": "ui/frame_27.png"
+        },
+        {
+          "type": "raw",
+          "name": "TINT_DUSK",
+          "file": "ui/tint_dusk.bin"
+        },
+        {
+          "type": "raw",
+          "name": "TINT_NIGHT",
+          "file": "ui/tint_night.bin"
+        },
+        {
+          "type": "bitmap",
+          "name": "EMOTES",
+          "file": "sprites/emotes.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FONT",
+          "file": "ui/font.png"
+        },
+        {
+          "type": "raw",
+          "name": "FONT_WIDTHS",
+          "file": "ui/font.bin"
+        }
+      ]
+    },
+    "capabilities": [
+      "health",
+      "configurable"
+    ]
+  }
+}
