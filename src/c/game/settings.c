@@ -2,7 +2,7 @@
 #include "game/daily.h"
 #include <stdlib.h>
 
-#define STORAGE_KEY 1
+#define STORAGE_KEY 2
 
 static Settings s_settings;
 static SettingsChangedHandler s_on_change;
@@ -20,6 +20,7 @@ static void prv_defaults(void) {
     .daylight = 0,
     .idle_animation = false,
     .active_only = true,
+    .grade = 1,
   };
 }
 
@@ -50,6 +51,7 @@ static void prv_inbox_received(DictionaryIterator *iter, void *context) {
   s->daylight = prv_read(iter, MESSAGE_KEY_Daylight, 0, 3, s->daylight);
   s->idle_animation = prv_read(iter, MESSAGE_KEY_IdleAnimation, 0, 1, s->idle_animation);
   s->active_only = prv_read(iter, MESSAGE_KEY_ActiveOnly, 0, 1, s->active_only);
+  s->grade = prv_read(iter, MESSAGE_KEY_Screen, 0, 2, s->grade);
   persist_write_data(STORAGE_KEY, &s_settings, sizeof(s_settings));
   if (s_on_change) {
     s_on_change(&previous);

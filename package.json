@@ -31,7 +31,8 @@
       "Demo",
       "Daylight",
       "IdleAnimation",
-      "ActiveOnly"
+      "ActiveOnly",
+      "Screen"
     ],
     "resources": {
       "media": [
@@ -564,6 +565,16 @@
           "type": "raw",
           "name": "TINT_NIGHT",
           "file": "ui/tint_night.bin"
+        },
+        {
+          "type": "raw",
+          "name": "GRADE_SOFT",
+          "file": "ui/grade_soft.bin"
+        },
+        {
+          "type": "raw",
+          "name": "GRADE_STRONG",
+          "file": "ui/grade_strong.bin"
         },
         {
           "type": "bitmap",

@@ -14,6 +14,7 @@ typedef struct {
   uint8_t daylight;
   bool idle_animation;
   bool active_only;
+  uint8_t grade;
 } Settings;
 
 typedef void (*SettingsChangedHandler)(const Settings *previous);

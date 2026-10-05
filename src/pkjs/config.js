@@ -33,6 +33,18 @@ module.exports = [
       { type: "heading", defaultValue: "World" },
       withRandom(select("Scene", "Location", "255", catalog.scenes)),
       select("Frame", "Window frame", "0", catalog.frames),
+      {
+        type: "select",
+        messageKey: "Screen",
+        label: "Colors",
+        defaultValue: "1",
+        description: "The watch screen shows light colors paler than the emulator. Deeper colors keep pale areas readable.",
+        options: [
+          { label: "Original (best on the emulator)", value: "0" },
+          { label: "Deeper", value: "1" },
+          { label: "Deepest", value: "2" },
+        ],
+      },
       select("Daylight", "Time of day", "0", [
         "Follow the clock",
         "Always day",

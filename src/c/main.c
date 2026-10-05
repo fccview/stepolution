@@ -1,5 +1,6 @@
 #include <pebble.h>
 #include "gfx/canvas.h"
+#include "gfx/grade.h"
 #include "hud/hud.h"
 #include "game/daily.h"
 #include "game/daylight.h"
@@ -94,6 +95,7 @@ static void prv_draw(Layer *layer, GContext *ctx) {
   const uint8_t *tint = daylight_tint(settings_get()->daylight, &s_hud.time);
   s_hud.glitched = world_is_glitching();
   canvas_begin(&s_canvas, ctx);
+  canvas_set_grade(&s_canvas, grade_table(settings_get()->grade));
   world_draw(&s_canvas, tint);
   hud_draw(&s_canvas, &s_hud);
   canvas_end(&s_canvas, ctx);
@@ -167,6 +169,7 @@ static void prv_init(void) {
   srand(time(NULL));
   settings_init(prv_settings_changed);
   daylight_load();
+  grade_load();
   s_window = window_create();
   window_set_window_handlers(s_window, (WindowHandlers) {
     .load = prv_window_load,

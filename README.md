@@ -31,6 +31,7 @@ pebble install --phone 192.168.1.20 stepolution-0.1.0.pbw
 - Pokemon, or a random one each day
 - Location, or a random one each day
 - Window frame
+- Colors, deeper for the real watch screen or original for the emulator
 - Time of day, following the clock or fixed
 - Zoom
 - How often the trainer wanders

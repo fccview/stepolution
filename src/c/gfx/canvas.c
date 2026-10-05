@@ -33,6 +33,11 @@ static void prv_put(Canvas *canvas, int16_t x, int16_t y, uint8_t scale, uint8_t
   }
 }
 
+static uint8_t prv_color(const Canvas *canvas, uint8_t argb) {
+  uint8_t color = canvas->tint ? canvas->tint[argb & 0x3F] : argb;
+  return canvas->grade ? canvas->grade[color & 0x3F] : color;
+}
+
 void canvas_begin(Canvas *canvas, GContext *ctx) {
   canvas->frame_buffer = graphics_capture_frame_buffer(ctx);
   canvas->tint = NULL;
@@ -50,10 +55,14 @@ void canvas_set_tint(Canvas *canvas, const uint8_t *tint) {
   canvas->tint = tint;
 }
 
+void canvas_set_grade(Canvas *canvas, const uint8_t *grade) {
+  canvas->grade = grade;
+}
+
 void canvas_fill(Canvas *canvas, GRect rect, GColor color) {
   for (int16_t y = rect.origin.y; y < rect.origin.y + rect.size.h; y++) {
     for (int16_t x = rect.origin.x; x < rect.origin.x + rect.size.w; x++) {
-      prv_put(canvas, x, y, 1, color.argb);
+      prv_put(canvas, x, y, 1, prv_color(canvas, color.argb));
     }
   }
 }
@@ -75,7 +84,7 @@ static void prv_blit(Canvas *canvas, const GBitmap *source, GRect source_rect, G
       int16_t column = flip ? source_rect.size.w - 1 - sx : sx;
       uint8_t argb = prv_read(row, source_rect.origin.x + column, bpp, palette);
       if (argb >> 6 && argb != skip) {
-        prv_put(canvas, origin.x + sx * scale, y, scale, canvas->tint ? canvas->tint[argb & 0x3F] : argb);
+        prv_put(canvas, origin.x + sx * scale, y, scale, prv_color(canvas, argb));
       }
     }
   }
